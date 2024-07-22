@@ -95,35 +95,25 @@ html {
 }
 
 @mixin leafWave() {
-  #up-leaf-container {
+  .leafs {
     position: absolute;
-    top: 0;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    overflow: hidden;
-    height: 16.5em;
+    height: 8em;
+    width: 8em;
+  }
+  #up-leaf-container {
     width: 100%;
-    .leafs {
-      margin-right: 1.5em;
-      height: 5.5em;
-      width: 5.5em;
-    }
+    position: absolute;
+    top: 15%;
+    height: 12em;
+    overflow: hidden;
+
   }
   #down-leaf-container {
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    overflow: hidden;
-    height: 16.5em;
     width: 100%;
-    .leafs {
-      margin-right: 1.5em;
-      height: 5.5em;
-      width: 5.5em;
-    }
+    position: absolute;
+    bottom: 15%;
+    height: 12em;
+    overflow: hidden;
   }
 }
 

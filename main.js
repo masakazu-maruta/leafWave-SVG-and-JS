@@ -12,7 +12,6 @@ const slidesShow = () => {
     slides.eq(now % slidesLength).fadeOut(1500);
     slides.eq((now + 1) % slidesLength).fadeIn(1500);
     now++;
-    console.log(slidesLength);
 }
 init();
 setInterval(slidesShow, 6000);
