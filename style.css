@@ -1,0 +1,434 @@
+@charset "UTF-8";
+html {
+  font-family: "Avenir", "Helvetica Neue", "Helvetica", "Arial", "Hiragino Sans", "ヒラギノ角ゴシック", YuGothic, "Yu Gothic", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+@media screen and (min-width: 1280px) {
+  #main-bg {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+  }
+  #main-bg .background-img {
+    position: absolute;
+    padding: 0;
+    -o-object-fit: cover;
+       object-fit: cover;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    height: 100%;
+  }
+  #main-content {
+    position: relative;
+    height: 100%;
+    width: 64%;
+    background-color: white;
+    box-shadow: 1.6vw 0px 24px 0px white;
+  }
+  #main-content #main-header {
+    position: absolute;
+    font-size: 2em;
+    padding: 0;
+    margin: 0;
+    height: 4%;
+    width: 100%;
+  }
+  #mark {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+  }
+  #mark .gradation-text {
+    font-size: 3.6em;
+    text-align: center;
+    background: linear-gradient(8deg, #337f33, #33be33);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  #mark .text {
+    font-size: 1.44em;
+    padding: 0.72em;
+    text-align: center;
+  }
+  #mark .circle {
+    position: absolute;
+    height: 28.8em;
+    width: 28.8em;
+  }
+  #mark .circle circle {
+    fill: none;
+    stroke: url(#grad);
+    stroke-width: 0.0288em;
+    stroke-dasharray: 314;
+  }
+  #mark .circle .stop1 {
+    stop-color: #80afff;
+  }
+  #mark .circle .stop2 {
+    stop-color: #80afff;
+    stop-opacity: 0.1;
+  }
+  #mark .circle .stop3 {
+    stop-color: #d5d500;
+    stop-opacity: 0.3;
+  }
+  #up-leaf-container {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    height: 16.5em;
+    width: 100%;
+  }
+  #up-leaf-container .leafs {
+    margin-right: 1.5em;
+    height: 5.5em;
+    width: 5.5em;
+  }
+  #down-leaf-container {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    height: 16.5em;
+    width: 100%;
+  }
+  #down-leaf-container .leafs {
+    margin-right: 1.5em;
+    height: 5.5em;
+    width: 5.5em;
+  }
+}
+@media screen and (max-width: 1279px) {
+  #main-bg {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+  }
+  #main-bg .background-img {
+    position: absolute;
+    padding: 0;
+    -o-object-fit: cover;
+       object-fit: cover;
+    z-index: -1;
+    bottom: 0;
+    width: 100%;
+  }
+  #main-content {
+    position: relative;
+    height: 72%;
+    width: 100%;
+    background-color: white;
+    box-shadow: 1.6vw 0px 24px 0px white;
+  }
+  #main-content #main-header {
+    position: absolute;
+    font-size: 2em;
+    padding: 0;
+    margin: 0;
+    height: 4%;
+    width: 100%;
+  }
+  #mark {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+  }
+  #mark .gradation-text {
+    font-size: 3.6em;
+    text-align: center;
+    background: linear-gradient(8deg, #337f33, #33be33);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  #mark .text {
+    font-size: 1.44em;
+    padding: 0.72em;
+    text-align: center;
+  }
+  #mark .circle {
+    position: absolute;
+    height: 28.8em;
+    width: 28.8em;
+  }
+  #mark .circle circle {
+    fill: none;
+    stroke: url(#grad);
+    stroke-width: 0.0288em;
+    stroke-dasharray: 314;
+  }
+  #mark .circle .stop1 {
+    stop-color: #80afff;
+  }
+  #mark .circle .stop2 {
+    stop-color: #80afff;
+    stop-opacity: 0.1;
+  }
+  #mark .circle .stop3 {
+    stop-color: #d5d500;
+    stop-opacity: 0.3;
+  }
+  #up-leaf-container {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    height: 16.5em;
+    width: 100%;
+  }
+  #up-leaf-container .leafs {
+    margin-right: 1.5em;
+    height: 5.5em;
+    width: 5.5em;
+  }
+  #down-leaf-container {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    height: 16.5em;
+    width: 100%;
+  }
+  #down-leaf-container .leafs {
+    margin-right: 1.5em;
+    height: 5.5em;
+    width: 5.5em;
+  }
+}
+@media screen and (max-width: 420px) {
+  #main-bg {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+  }
+  #main-bg .background-img {
+    position: absolute;
+    padding: 0;
+    -o-object-fit: cover;
+       object-fit: cover;
+    z-index: -1;
+    bottom: 0;
+    width: 100%;
+  }
+  #main-content {
+    position: relative;
+    height: 64%;
+    width: 100%;
+    background-color: white;
+    box-shadow: 1.6vw 0px 24px 0px white;
+  }
+  #main-content #main-header {
+    position: absolute;
+    font-size: 2em;
+    padding: 0;
+    margin: 0;
+    height: 4%;
+    width: 100%;
+  }
+  #mark {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+  }
+  #mark .gradation-text {
+    font-size: 2.4em;
+    text-align: center;
+    background: linear-gradient(8deg, #337f33, #33be33);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  #mark .text {
+    font-size: 0.96em;
+    padding: 0.48em;
+    text-align: center;
+  }
+  #mark .circle {
+    position: absolute;
+    height: 19.2em;
+    width: 19.2em;
+  }
+  #mark .circle circle {
+    fill: none;
+    stroke: url(#grad);
+    stroke-width: 0.0192em;
+    stroke-dasharray: 314;
+  }
+  #mark .circle .stop1 {
+    stop-color: #80afff;
+  }
+  #mark .circle .stop2 {
+    stop-color: #80afff;
+    stop-opacity: 0.1;
+  }
+  #mark .circle .stop3 {
+    stop-color: #d5d500;
+    stop-opacity: 0.3;
+  }
+  #up-leaf-container {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    height: 16.5em;
+    width: 100%;
+  }
+  #up-leaf-container .leafs {
+    margin-right: 1.5em;
+    height: 5.5em;
+    width: 5.5em;
+  }
+  #down-leaf-container {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    height: 16.5em;
+    width: 100%;
+  }
+  #down-leaf-container .leafs {
+    margin-right: 1.5em;
+    height: 5.5em;
+    width: 5.5em;
+  }
+}
+@media screen and (max-width: 320px) {
+  #main-bg {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+  }
+  #main-bg .background-img {
+    position: absolute;
+    padding: 0;
+    -o-object-fit: cover;
+       object-fit: cover;
+    z-index: -1;
+    bottom: 0;
+    width: 100%;
+  }
+  #main-content {
+    position: relative;
+    height: 56%;
+    width: 100%;
+    background-color: white;
+    box-shadow: 1.6vw 0px 24px 0px white;
+  }
+  #main-content #main-header {
+    position: absolute;
+    font-size: 2em;
+    padding: 0;
+    margin: 0;
+    height: 4%;
+    width: 100%;
+  }
+  #mark {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+  }
+  #mark .gradation-text {
+    font-size: 2em;
+    text-align: center;
+    background: linear-gradient(8deg, #337f33, #33be33);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  #mark .text {
+    font-size: 0.8em;
+    padding: 0.4em;
+    text-align: center;
+  }
+  #mark .circle {
+    position: absolute;
+    height: 16em;
+    width: 16em;
+  }
+  #mark .circle circle {
+    fill: none;
+    stroke: url(#grad);
+    stroke-width: 0.016em;
+    stroke-dasharray: 314;
+  }
+  #mark .circle .stop1 {
+    stop-color: #80afff;
+  }
+  #mark .circle .stop2 {
+    stop-color: #80afff;
+    stop-opacity: 0.1;
+  }
+  #mark .circle .stop3 {
+    stop-color: #d5d500;
+    stop-opacity: 0.3;
+  }
+  #up-leaf-container {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    height: 16.5em;
+    width: 100%;
+  }
+  #up-leaf-container .leafs {
+    margin-right: 1.5em;
+    height: 5.5em;
+    width: 5.5em;
+  }
+  #down-leaf-container {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    height: 16.5em;
+    width: 100%;
+  }
+  #down-leaf-container .leafs {
+    margin-right: 1.5em;
+    height: 5.5em;
+    width: 5.5em;
+  }
+}/*# sourceMappingURL=style.css.map */

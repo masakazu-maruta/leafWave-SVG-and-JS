@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="main.js" defer></script>
+    <script src="leafWave.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="main-bg">
+      <div id="main-content">
+        <div id="main-header">
+          <span>東北薬理研</span>
+        </div>
+        <div id="mark">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 110 110"
+            class="circle"
+          >
+            <defs>
+              <linearGradient id="grad" x1="0%" y1="25%" x2="100%" y2="-25%">
+                <stop class="stop1" offset="0%" />
+                <stop class="stop2" offset="16%" />
+                <stop class="stop3" offset="100%" />
+              </linearGradient>
+            </defs>
+            <circle cx="55" cy="55" r="50" class="demo" />
+          </svg>
+          <span class="gradation-text"
+            >For Health<br />
+            For Happiness</span
+          >
+          <span class="text">患者様の健康と幸せのために</span>
+        </div>
+        <div id="up-leaf-container"></div>
+        <div id="down-leaf-container"></div>
+      </div>
+      <img class="background-img" src="images/image1.png" alt="img" />
+      <img class="background-img" src="images/image2.png" alt="img" />
+    </div>
+  </body>
+</html>

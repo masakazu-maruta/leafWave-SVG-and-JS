@@ -1,0 +1,153 @@
+@use "var";
+
+html {
+  font-family: "Avenir", "Helvetica Neue", "Helvetica", "Arial", "Hiragino Sans",
+    "ヒラギノ角ゴシック", YuGothic, "Yu Gothic", "メイリオ", Meiryo,
+    "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+@mixin mark($baseSize) {
+  #mark {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    .gradation-text {
+      font-size: $baseSize * 0.5;
+      text-align: center;
+      background: linear-gradient(8deg, #337f33, #33be33);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .text {
+      font-size: $baseSize * 0.2;
+      padding: $baseSize * 0.1;
+      text-align: center;
+    }
+    .circle {
+      position: absolute;
+      height: $baseSize * 4;
+      width: $baseSize * 4;
+      circle {
+        fill: none;
+        stroke: url(#grad);
+        stroke-width: $baseSize * 0.004;
+        stroke-dasharray: 314;
+      }
+      .stop1 {
+        stop-color: #80afff;
+      }
+      .stop2 {
+        stop-color: #80afff;
+        stop-opacity: 0.1;
+      }
+      .stop3 {
+        stop-color: #d5d500;
+        stop-opacity: 0.3;
+      }
+    }
+  }
+}
+
+@mixin mainContent($height, $width, $bgColor) {
+  #main-content {
+    position: relative;
+    height: $height;
+    width: $width;
+    background-color: $bgColor;
+    box-shadow: 1.6vw 0px 24px 0px $bgColor;
+    #main-header {
+      position: absolute;
+      font-size: 2em;
+      padding: 0;
+      margin: 0;
+      height: 4%;
+      width: 100%;
+    }
+  }
+}
+
+@mixin mainBg($height, $width, $mode) {
+  #main-bg {
+    position: relative;
+    height: $height;
+    width: $width;
+    z-index: -1;
+    .background-img {
+      position: absolute;
+      padding: 0;
+      object-fit: cover;
+      z-index: -1;
+      @if $mode == "horizontal" {
+        top: 0;
+        right: 0;
+        height: 100%;
+      } @else {
+        bottom: 0;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@mixin leafWave() {
+  #up-leaf-container {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    height: 16.5em;
+    width: 100%;
+    .leafs {
+      margin-right: 1.5em;
+      height: 5.5em;
+      width: 5.5em;
+    }
+  }
+  #down-leaf-container {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    height: 16.5em;
+    width: 100%;
+    .leafs {
+      margin-right: 1.5em;
+      height: 5.5em;
+      width: 5.5em;
+    }
+  }
+}
+
+@include var.breakPoint("pc") {
+  @include mainBg(100vh, 100vw, "horizontal");
+  @include mainContent(100%, 64%, white);
+  @include mark(7.2em);
+  @include leafWave();
+}
+@include var.breakPoint("tablet") {
+  @include mainBg(100vh, 100vw, "vertical");
+  @include mainContent(72%, 100%, white);
+  @include mark(7.2em);
+  @include leafWave();
+}
+@include var.breakPoint("sp") {
+  @include mainBg(100vh, 100vw, "vertical");
+  @include mainContent(64%, 100%, white);
+  @include mark(4.8em);
+  @include leafWave();
+}
+@include var.breakPoint("small-screen") {
+  @include mainBg(100vh, 100vw, "vertical");
+  @include mainContent(56%, 100%, white);
+  @include mark(4em);
+  @include leafWave();
+}
