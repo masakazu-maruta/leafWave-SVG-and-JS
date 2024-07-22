@@ -52,13 +52,12 @@ const wave = (isUp, direction, duration, currentTime) => {
     }
 }
 
-const spaceBetween = 160;
 const waveSpeed = 0.25;
 const nextX = (index, currentTime, direction, leaf) => {
-    const mag = direction ? 1 : -1;
-    const leafDestination = leafNumber * spaceBetween;
-    const firstPos = index * spaceBetween;
+    const leafDestination = leafNumber * leaf.getBoundingClientRect().width;
+    const firstPos = leafDestination * index / leafNumber;
     const offset = ((currentTime - firstTime) * waveSpeed);
+
     if (direction == dirRight) {
         return (firstPos + offset) % (leafDestination) - leaf.getBoundingClientRect().width;
     } else {

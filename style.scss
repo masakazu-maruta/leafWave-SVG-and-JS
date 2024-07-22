@@ -6,6 +6,11 @@ html {
     "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
 
+body{
+  margin: 0;
+  padding: 0;
+}
+
 @mixin mark($baseSize) {
   #mark {
     overflow: hidden;
@@ -59,7 +64,7 @@ html {
     height: $height;
     width: $width;
     background-color: $bgColor;
-    box-shadow: 1.6vw 0px 24px 0px $bgColor;
+    box-shadow: 1.6em 0px 2em 2em $bgColor;
     #main-header {
       position: absolute;
       font-size: 2em;
@@ -94,25 +99,25 @@ html {
   }
 }
 
-@mixin leafWave() {
+@mixin leafWave($leafSize,$offset,$containerHeight) {
   .leafs {
     position: absolute;
-    height: 8em;
-    width: 8em;
+    height:$leafSize;
+    width: $leafSize;
   }
   #up-leaf-container {
-    width: 100%;
     position: absolute;
-    top: 15%;
-    height: 12em;
+    top: $offset;
+    width: 100%;
+    height: $containerHeight;
     overflow: hidden;
 
   }
   #down-leaf-container {
-    width: 100%;
     position: absolute;
-    bottom: 15%;
-    height: 12em;
+    width: 100%;
+    bottom: $offset;
+    height: $containerHeight;
     overflow: hidden;
   }
 }
@@ -121,23 +126,23 @@ html {
   @include mainBg(100vh, 100vw, "horizontal");
   @include mainContent(100%, 64%, white);
   @include mark(7.2em);
-  @include leafWave();
+  @include leafWave(6.4em,8%,12em);
 }
 @include var.breakPoint("tablet") {
   @include mainBg(100vh, 100vw, "vertical");
   @include mainContent(72%, 100%, white);
   @include mark(7.2em);
-  @include leafWave();
+  @include leafWave(5.6em,8%,9.6em);
 }
 @include var.breakPoint("sp") {
   @include mainBg(100vh, 100vw, "vertical");
   @include mainContent(64%, 100%, white);
   @include mark(4.8em);
-  @include leafWave();
+  @include leafWave(4em,6.4%,6.4em);
 }
 @include var.breakPoint("small-screen") {
   @include mainBg(100vh, 100vw, "vertical");
   @include mainContent(56%, 100%, white);
   @include mark(4em);
-  @include leafWave();
+  @include leafWave(4em,5.6%,7.2em);
 }
